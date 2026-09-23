@@ -12,557 +12,157 @@
       --bg-page: #f8fafc;
       --border-color: #e2e8f0;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-page); color: #1e293b; padding-bottom: 80px; }
-
-    /* 1. TOP UTILITY BAR */
-    .top-utility {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 7px 10px;
-      font-size: 0.78rem;
-      letter-spacing: 0.5px;
-    }
-    .top-utility a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 8px;
-      font-weight: 600;
-    }
-
-    /* 2. HEADER */
-    header {
-      background: #000;
-      color: #fff;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-left, .header-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 1.25rem;
-    }
-    .header-logo {
-      font-size: 1.4rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      color: #fff;
-      line-height: 1.1;
-    }
-    .header-logo span.bolt {
-      color: var(--primary-red);
-      margin-right: 2px;
-    }
-    .header-logo .sub {
-      display: block;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-    }
-
-    /* 3. HERO SLIDER BANNER */
-    .hero-banner {
-      width: 100%;
-      background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
-      position: relative;
-      overflow: hidden;
-      padding: 20px 15px 25px;
-      color: #fff;
-      text-align: center;
-    }
-    .hero-badges {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .badge-sale {
-      background: #facc15;
-      color: #000;
-      font-weight: 900;
-      font-size: 0.85rem;
-      padding: 5px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-    }
-    .badge-discount-hero {
-      background: var(--primary-red);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-weight: 900;
-      font-size: 0.95rem;
-      line-height: 1.1;
-    }
-    .badge-discount-hero small { font-size: 0.65rem; display: block; font-weight: normal; }
-    
-    .hero-screens {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin: 15px 0 10px;
-    }
-    .hero-screen-img {
-      max-width: 80%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    /* Trust Ribbon */
-    .hero-trust {
-      background: #fff;
-      color: #334155;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 5px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      border-bottom: 1px solid var(--border-color);
-      text-transform: uppercase;
-    }
-    .hero-trust div { display: flex; align-items: center; gap: 4px; }
-
-    /* 4. MARQUEE BANNER */
-    .announcement-bar {
-      background-color: #f1f5f9;
-      color: #334155;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 0.82rem;
-      padding: 8px 0;
-      font-weight: 700;
-      direction: rtl;
-      border-bottom: 1px solid var(--border-color);
-    }
+    .top-utility { background: #000; color: #fff; text-align: center; padding: 7px 10px; font-size: 0.78rem; }
+    .top-utility a { color: #fff; text-decoration: underline; margin: 0 8px; font-weight: 600; }
+    header { background: #000; color: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .header-left, .header-right { display: flex; align-items: center; gap: 18px; font-size: 1.25rem; }
+    .header-logo { font-size: 1.4rem; font-weight: 900; text-transform: uppercase; text-align: center; text-decoration: none; color: #fff; line-height: 1.1; }
+    .header-logo span.bolt { color: var(--primary-red); }
+    .header-logo .sub { display: block; font-size: 1.1rem; }
+    .hero-banner { width: 100%; background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%); padding: 20px 15px 25px; color: #fff; text-align: center; }
+    .badge-sale { background: #facc15; color: #000; font-weight: 900; font-size: 0.85rem; padding: 5px 12px; border-radius: 20px; }
+    .badge-discount-hero { background: var(--primary-red); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 900; }
+    .hero-screens { margin: 15px 0 10px; }
+    .hero-screens img { max-width: 80%; height: auto; border-radius: 8px; }
+    .hero-trust { background: #fff; color: #334155; display: flex; justify-content: space-around; padding: 10px 5px; font-size: 0.68rem; font-weight: 700; border-bottom: 1px solid var(--border-color); }
+    .announcement-bar { background-color: #f1f5f9; color: #334155; overflow: hidden; white-space: nowrap; font-size: 0.82rem; padding: 8px 0; font-weight: 700; direction: rtl; border-bottom: 1px solid var(--border-color); }
     .announcement-track { display: inline-block; animation: ticker 25s linear infinite; }
     .announcement-item { display: inline-block; margin: 0 25px; }
     @keyframes ticker { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-
-    /* 5. BANNER WITH YOUR CUSTOM PHONES IMAGE */
-    .cod-custom-banner {
-      background: #000;
-      color: #fff;
-      margin: 15px 12px;
-      border-radius: 14px;
-      padding: 15px 14px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      direction: rtl;
-      border: 1px solid #222;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .cod-custom-text {
-      flex: 1;
-      z-index: 2;
-    }
-    .cod-custom-text h3 {
-      font-size: 1.15rem;
-      font-weight: 900;
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-    .cod-custom-text h3 span {
-      color: #facc15;
-    }
-    .cod-custom-text p {
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-    }
-    .cod-custom-text small {
-      font-size: 0.72rem;
-      color: #ef4444;
-      display: block;
-      font-weight: bold;
-    }
-    .cod-custom-img-wrap {
-      width: 125px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .cod-custom-img-wrap img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 8px;
-      transform: scale(1.08);
-    }
-
-    /* 6. NOS CATEGORIES */
-    .section-categories {
-      padding: 20px 12px 10px;
-    }
-    .categories-title {
-      font-size: 1.45rem;
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 22px;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-    }
-    
-    .category-banner {
-      border-radius: 12px;
-      margin-bottom: 14px;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      text-decoration: none;
-      color: #fff;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-    .category-banner.telephones {
-      background: linear-gradient(90deg, #10b981 0%, #0284c7 100%);
-    }
-    .category-banner.televiseurs {
-      background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%);
-    }
-
-    .cat-thumb {
-      height: 75px;
-      width: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cat-thumb img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-    }
-    .cat-name {
-      font-size: 1.35rem;
-      font-weight: 900;
-      letter-spacing: -0.3px;
-    }
-
-    /* 7. PRODUCTS CATALOG */
-    .products-container {
-      padding: 15px 12px;
-    }
-    .products-heading {
-      font-size: 1.15rem;
-      font-weight: 900;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .product-card {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    .card-badge {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: var(--primary-red);
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 800;
-      padding: 3px 6px;
-      border-radius: 4px;
-      z-index: 2;
-    }
-    .card-img-wrap {
-      width: 100%;
-      height: 150px;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-    }
-    .card-img-wrap img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    .card-body {
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      border-top: 1px solid #f8fafc;
-    }
-    .card-shipping {
-      color: #059669;
-      font-size: 0.68rem;
-      font-weight: 800;
-      margin-bottom: 3px;
-    }
-    .card-title {
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.3;
-      margin-bottom: 6px;
-      height: 32px;
-      overflow: hidden;
-    }
-    .card-condition {
-      font-size: 0.72rem;
-      color: #64748b;
-      margin-bottom: 8px;
-    }
-    .card-price {
-      font-size: 1.05rem;
-      font-weight: 900;
-      color: var(--primary-red);
-    }
-    .card-old-price {
-      font-size: 0.78rem;
-      color: #94a3b8;
-      text-decoration: line-through;
-      margin-left: 4px;
-    }
-    .btn-card-order {
-      background: var(--dark-navy);
-      color: #fff;
-      border: none;
-      padding: 9px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.8rem;
-      cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
-    }
-
-    /* Checkout Popup Modal */
+    .cod-custom-banner { background: #000; color: #fff; margin: 15px 12px; border-radius: 14px; padding: 15px 14px; display: flex; align-items: center; justify-content: space-between; direction: rtl; }
+    .cod-custom-text h3 { font-size: 1.15rem; font-weight: 900; }
+    .cod-custom-text h3 span { color: #facc15; }
+    .cod-custom-text p { font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; }
+    .cod-custom-text small { font-size: 0.72rem; color: #ef4444; font-weight: bold; }
+    .cod-custom-img-wrap img { width: 110px; height: 120px; object-fit: cover; border-radius: 8px; }
+    .section-categories { padding: 20px 12px 10px; }
+    .categories-title { font-size: 1.45rem; font-weight: 900; text-align: center; margin-bottom: 20px; }
+    .category-banner { border-radius: 12px; margin-bottom: 14px; height: 90px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; text-decoration: none; color: #fff; }
+    .category-banner.telephones { background: linear-gradient(90deg, #10b981 0%, #0284c7 100%); }
+    .category-banner.televiseurs { background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%); }
+    .cat-name { font-size: 1.35rem; font-weight: 900; }
+    .products-container { padding: 15px 12px; }
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .product-card { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+    .card-badge { position: absolute; top: 8px; left: 8px; background: var(--primary-red); color: #fff; font-size: 0.68rem; font-weight: 800; padding: 3px 6px; border-radius: 4px; }
+    .card-img-wrap { width: 100%; height: 140px; padding: 10px; display: flex; align-items: center; justify-content: center; }
+    .card-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .card-body { padding: 10px; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-title { font-size: 0.82rem; font-weight: 800; margin-bottom: 4px; height: 32px; overflow: hidden; }
+    .card-price { font-size: 1.05rem; font-weight: 900; color: var(--primary-red); }
+    .btn-card-order { background: var(--dark-navy); color: #fff; border: none; padding: 9px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; cursor: pointer; margin-top: 10px; width: 100%; }
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; align-items: center; justify-content: center; padding: 16px; direction: rtl; }
     .modal-card { background: #fff; max-width: 400px; width: 100%; border-radius: 12px; padding: 20px; position: relative; }
-    .modal-close { position: absolute; top: 12px; left: 14px; border: none; background: none; font-size: 1.4rem; cursor: pointer; color: #64748b; }
+    .modal-close { position: absolute; top: 12px; left: 14px; border: none; background: none; font-size: 1.4rem; cursor: pointer; }
     .form-group { margin-bottom: 12px; }
     .form-group label { display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
-    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.95rem; }
+    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; }
     .btn-submit-order { width: 100%; background: #16a34a; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; }
-
-    /* Floating WhatsApp */
     .floating-wa { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 4px 14px rgba(0,0,0,0.25); z-index: 998; text-decoration: none; }
   </style>
 </head>
 <body>
-
-  <!-- 1. Top Utility -->
   <div class="top-utility">
     <a href="#">Assistance</a> | <a href="#">Suivi de commande</a>
   </div>
-
-  <!-- 2. Header -->
   <header>
-    <div class="header-left">
-      <i class="fa fa-bars"></i>
-    </div>
+    <div class="header-left"><i class="fa fa-bars"></i></div>
     <a href="#" class="header-logo">
       <div><span class="bolt">⚡</span>MAHFOUD</div>
       <span class="sub">PHONE</span>
     </a>
-    <div class="header-right">
-      <i class="fa fa-search"></i>
-      <i class="fa fa-shopping-bag"></i>
-    </div>
+    <div class="header-right"><i class="fa fa-search"></i><i class="fa fa-shopping-bag"></i></div>
   </header>
-
-  <!-- 3. Hero Promo Banner -->
   <section class="hero-banner">
-    <div class="hero-badges">
+    <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
       <div class="badge-sale">SUMMER SALE 🌴</div>
-      <div class="badge-discount-hero">
-        <small>JUSQU'À</small>-45%
-      </div>
+      <div class="badge-discount-hero">-45%</div>
     </div>
-    <h2 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">OFFRES SPÉCIALES SMARTPHONES</h2>
     <div class="hero-screens">
-      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=80'" class="hero-screen-img" alt="Promo Smartphone">
+      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=80'" alt="Promo">
     </div>
   </section>
-
-  <!-- Trust strip -->
   <div class="hero-trust">
     <div><i class="fa fa-check-circle" style="color:#0284c7"></i> Qualité Premium</div>
     <div><i class="fa fa-shield-alt" style="color:#0284c7"></i> Garantie</div>
     <div><i class="fa fa-truck" style="color:#0284c7"></i> Livraison Rapide</div>
   </div>
-
-  <!-- 4. Announcement Marquee -->
   <div class="announcement-bar">
     <div class="announcement-track">
       <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن بـ 100 درهم 💸 فقط ، و إكمال المبلغ عند التسليم</span>
-      <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن بـ 100 درهم 💸 فقط ، و إكمال المبلغ عند التسليم</span>
     </div>
   </div>
-
-  <!-- 5. BANNER WITH YOUR PROVIDED PHONES IMAGE -->
   <div class="cod-custom-banner">
     <div class="cod-custom-text">
       <h3>احجز منتجك الآن <span>بـ 100 درهم فقط!</span></h3>
       <p>و كمل المبلغ المتبقي عند الإستلام</p>
-      <small>⚡ منتجاتنا تنفد بسرعة • احجز الآن قبل نفاد الكمية</small>
+      <small>⚡ منتجاتنا تنفد بسرعة</small>
     </div>
     <div class="cod-custom-img-wrap">
-      <!-- صورة هواتف ريدمي التي أرفقتها -->
-      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80'" alt="Smartphones Disponibles">
+      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80'" alt="Promo">
     </div>
   </div>
-
-  <!-- 6. Nos Catégories Section -->
   <section class="section-categories">
     <h2 class="categories-title">Nos Catégories</h2>
-
     <a href="#produits" class="category-banner telephones">
-      <div class="cat-thumb">
-        <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80'" alt="Téléphones">
-      </div>
       <div class="cat-name">Téléphones</div>
     </a>
-
     <a href="#produits" class="category-banner televiseurs">
-      <div class="cat-thumb">
-        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=300&auto=format&fit=crop&q=80" alt="Téléviseurs">
-      </div>
       <div class="cat-name">Téléviseurs</div>
     </a>
   </section>
-
-  <!-- 7. Products Section with provided Images -->
   <section class="products-container" id="produits">
-    <div class="products-heading">
-      <span>Nouveautés Disponibles</span>
-    </div>
-
     <div class="products-grid">
-
-      <!-- Item 1: Samsung A07 / A17 -->
       <div class="product-card">
         <span class="card-badge">Promo</span>
         <div class="card-img-wrap">
-          <!--  -->
-          <img src="samsung-a17.png" onerror="this.src="a07.jpg" alt="Samsung galaxy a07"-1610945265064-0e34e5519bbf?w=300&auto=format&fit=crop&q=80'" alt="Samsung Galaxy">
+          <img src="samsung-a17.png" onerror="this.src='https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&auto=format&fit=crop&q=80'" alt="Samsung Galaxy A07">
         </div>
         <div class="card-body">
-          <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
           <h4 class="card-title">Samsung Galaxy A07 (4/64)</h4>
-          <span class="card-condition">(Neuf Boîte fermée)</span>
-          <div>
-            <span class="card-price">1,570 dh</span>
-            <span class="card-old-price">1,750 dh</span>
-          </div>
+          <span class="card-price">1,570 dh</span>
           <button class="btn-card-order" onclick="openOrderModal('Samsung Galaxy A07 (4/64)', '1,570.00 dh')">Commander</button>
         </div>
       </div>
-
-      <!-- Item 2: Redmi A7 Pro -->
       <div class="product-card">
         <span class="card-badge">Promo</span>
         <div class="card-img-wrap">
-          <!-- صورة ريدمي المرفقة -->
-          <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80'" alt="Redmi A7 Pro">
+          <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80'" alt="Xiaomi Redmi A7 Pro">
         </div>
         <div class="card-body">
-          <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
           <h4 class="card-title">Xiaomi Redmi A7 Pro</h4>
-          <span class="card-condition">(Neuf Boîte fermée)</span>
-          <div>
-            <span class="card-price">1,600 dh</span>
-            <span class="card-old-price">1,800 dh</span>
-          </div>
+          <span class="card-price">1,600 dh</span>
           <button class="btn-card-order" onclick="openOrderModal('Xiaomi Redmi A7 Pro', '1,600.00 dh')">Commander</button>
         </div>
       </div>
-
     </div>
   </section>
-
-  <!-- Checkout Popup Modal -->
   <div class="modal-overlay" id="orderModal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeOrderModal()">&times;</button>
-      <h3 style="margin-bottom: 6px; font-size: 1.05rem; text-align: center;">تأكيد الطلب السريع (COD)</h3>
+      <h3 style="margin-bottom: 6px; font-size: 1.05rem; text-align: center;">تأكيد الطلب السريع</h3>
       <p id="targetProdLabel" style="font-size: 0.88rem; color: var(--primary-red); font-weight: bold; margin-bottom: 14px; text-align: center;"></p>
-      
       <form onsubmit="handleOrderSubmit(event)">
-        <div class="form-group">
-          <label>الاسم الكامل</label>
-          <input type="text" id="custName" placeholder="الاسم والنسب" required>
-        </div>
-        <div class="form-group">
-          <label>رقم الهاتف</label>
-          <input type="tel" id="custPhone" placeholder="06XXXXXXXX" required>
-        </div>
-        <div class="form-group">
-          <label>المدينة والعنوان</label>
-          <input type="text" id="custCity" placeholder="مثال: الدار البيضاء" required>
-        </div>
+        <div class="form-group"><label>الاسم الكامل</label><input type="text" id="custName" required></div>
+        <div class="form-group"><label>رقم الهاتف</label><input type="tel" id="custPhone" required></div>
+        <div class="form-group"><label>المدينة والعنوان</label><input type="text" id="custCity" required></div>
         <button type="submit" class="btn-submit-order">تأكيد الطلب الآن 🚚</button>
       </form>
     </div>
   </div>
-
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/212693603765" class="floating-wa" target="_blank" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
+  <a href="https://wa.me/212693603765" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <script>
     const WA_PHONE = "212693603765";
-    let activeProduct = "";
-    let activePrice = "";
-
-    function openOrderModal(prodName, prodPrice) {
-      activeProduct = prodName;
-      activePrice = prodPrice;
-      document.getElementById('targetProdLabel').innerText = prodName + " — " + prodPrice;
-      document.getElementById('orderModal').style.display = 'flex';
-    }
-
-    function closeOrderModal() {
-      document.getElementById('orderModal').style.display = 'none';
-    }
-
+    let activeProduct = "", activePrice = "";
+    function openOrderModal(p, pr) { activeProduct = p; activePrice = pr; document.getElementById('targetProdLabel').innerText = p + " — " + pr; document.getElementById('orderModal').style.display = 'flex'; }
+    function closeOrderModal() { document.getElementById('orderModal').style.display = 'none'; }
     function handleOrderSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('custName').value;
-      const phone = document.getElementById('custPhone').value;
-      const city = document.getElementById('custCity').value;
-
-      const orderMsg = `السلام عليكم متجر MahfoudPhone، طلب جديد:\n📦 الجهاز: ${activeProduct}\n💰 الثمن: ${activePrice}\n👤 الاسم: ${name}\n📱 الهاتف: ${phone}\n📍 المدينة/العنوان: ${city}`;
-
+      const n = document.getElementById('custName').value, ph = document.getElementById('custPhone').value, c = document.getElementById('custCity').value;
       closeOrderModal();
-      window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(orderMsg)}`, '_blank');
+      window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent('Commande:\n' + activeProduct + '\n' + activePrice + '\n' + n + '\n' + ph + '\n' + c)}`, '_blank');
     }
   </script>
 </body>
