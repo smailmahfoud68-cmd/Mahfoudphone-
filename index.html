@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MahfoudPhone - Smartphones au Maroc</title>
+  <title>MahfoudPhone - Smartphones Neufs & Occasion au Maroc</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -39,8 +39,68 @@
     .logo span { color: var(--primary-red); }
     .header-badge { font-size: 0.85rem; font-weight: 700; color: #059669; background: #ecfdf5; padding: 6px 12px; border-radius: 20px; border: 1px solid #a7f3d0; }
 
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+      color: #fff;
+      padding: 30px 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero-banner h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .hero-banner h1 span { color: var(--primary-red); }
+    .hero-banner p { font-size: 0.9rem; color: #9ca3af; }
+
+    /* Brands Section */
+    .brands-section {
+      max-width: 1240px;
+      margin: 0 auto 25px;
+      padding: 0 16px;
+    }
+    .brands-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #6b7280;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+    }
+    .brand-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .brand-card:hover {
+      border-color: var(--primary-red);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .brand-card img {
+      max-width: 80px;
+      height: 36px;
+      object-fit: contain;
+      margin-bottom: 6px;
+    }
+    .brand-card span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+    }
+
     /* Main Container */
-    .container { max-width: 1240px; margin: 25px auto; padding: 0 16px; }
+    .container { max-width: 1240px; margin: 0 auto 30px; padding: 0 16px; }
     .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 18px; color: var(--dark-navy); border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
 
@@ -146,7 +206,46 @@
     </div>
   </header>
 
-  <main class="container">
+  <!-- Hero Header -->
+  <section class="hero-banner">
+    <h1>أفضل الهواتف الذكية مع <span>MahfoudPhone</span></h1>
+    <p>أجهزة أصلية، توصيل مجاني، ودفع عند الاستلام بعد المعاينة</p>
+  </section>
+
+  <!-- Brand Logos Section -->
+  <section class="brands-section">
+    <div class="brands-title">الماركات المتوفرة (Nos Marques)</div>
+    <div class="brands-grid">
+      
+      <!-- Samsung -->
+      <a href="#produits" class="brand-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
+        <span>Samsung</span>
+      </a>
+
+      <!-- Xiaomi / Redmi -->
+      <a href="#produits" class="brand-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg" alt="Xiaomi Redmi">
+        <span>Redmi</span>
+      </a>
+
+      <!-- Infinix -->
+      <a href="#produits" class="brand-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Infinix_Mobility_logo.svg" alt="Infinix">
+        <span>Infinix</span>
+      </a>
+
+      <!-- Apple -->
+      <a href="#produits" class="brand-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+        <span>Apple</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Products Catalog -->
+  <main class="container" id="produits">
     <div class="section-title">
       <span>الهواتف المتوفرة حالياً (Disponibles)</span>
     </div>
@@ -157,7 +256,7 @@
       <div class="product-card">
         <span class="badge-discount">Promo</span>
         <div class="product-thumb">
-          <img src="https://via.placeholder.com/260x260?text=Samsung+A07" alt="Samsung Galaxy A07">
+          <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop&q=80" alt="Samsung Galaxy A07">
         </div>
         <div class="product-details">
           <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
@@ -179,7 +278,7 @@
       <div class="product-card">
         <span class="badge-discount">Promo</span>
         <div class="product-thumb">
-          <img src="https://via.placeholder.com/260x260?text=Redmi+A7+Pro" alt="Redmi A7 Pro">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80" alt="Redmi A7 Pro">
         </div>
         <div class="product-details">
           <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
