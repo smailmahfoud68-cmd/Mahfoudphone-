@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MahfoudPhone - Smartphones Neufs & Occasion au Maroc</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-red: #e61e2b;
+      --dark-navy: #111827;
+      --text-gray: #4b5563;
+      --bg-light: #f4f5f7;
+      --border-color: #e5e7eb;
+      --badge-green: #10b981;
+      --badge-orange: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: #1f2937;
+      padding-bottom: 70px;
+    }
+
+    /* 1. TOP BAR MARQUEE */
+    .announcement-bar {
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0.82rem;
+      padding: 8px 0;
+      font-weight: 500;
+      direction: rtl;
+    }
+    .announcement-track {
+      display: inline-block;
+      animation: ticker 25s linear infinite;
+    }
+    .announcement-item {
+      display: inline-block;
+      margin: 0 30px;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* 2. HEADER */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .header-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 900;
+      text-decoration: none;
+      color: var(--dark-navy);
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: var(--primary-red);
+    }
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* 3. CATEGORY TABS */
+    .nav-bar {
+      border-top: 1px solid #f1f2f4;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .nav-bar ul {
+      display: flex;
+      list-style: none;
+      max-width: 1240px;
+      padding: 0 16px;
+    }
+    .nav-bar li a {
+      display: block;
+      padding: 12px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #374151;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .nav-bar li a:hover, .nav-bar li a.active {
+      color: var(--primary-red);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    /* 4. CONTAINER & SECTIONS */
+    .container {
+      max-width: 1240px;
+      margin: 25px auto;
+      padding: 0 16px;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 25px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--dark-navy);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+    .section-title i {
+      color: var(--primary-red);
+    }
+
+    /* 5. PRODUCT CARDS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .badge-discount {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--primary-red);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .badge-used {
+      background: var(--badge-orange);
+    }
+    .badge-delivery {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--badge-green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .product-thumb {
+      width: 100%;
+      height: 200px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .product-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .product-details {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      border-top: 1px solid #f9fafb;
+    }
+    .brand-name {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .product-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .condition-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #059669;
+      margin-bottom: 10px;
+    }
+    .condition-used {
+      color: #d97706;
+    }
+    .price-wrapper {
+      margin-top: auto;
+      margin-bottom: 12px;
+    }
+    .price-label {
+      font-size: 0.72rem;
+      color: #6b7280;
+      display: block;
+    }
+    .current-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-red);
+    }
+    .old-price {
+      font-size: 0.85rem;
+      text-decoration: line-through;
+      color: #9ca3af;
+      margin-left: 6px;
+    }
+
+    /* Buttons */
+    .btn-order-fast {
+      background: var(--dark-navy);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    .btn-order-fast:hover {
+      background: var(--primary-red);
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      direction: rtl;
+    }
+    .modal-card {
+      background: #fff;
+      max-width: 440px;
+      width: 100%;
+      border-radius: 12px;
+      padding: 22px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      border: none;
+      background: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #6b7280;
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    .btn-submit-order {
+      width: 100%;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    /* Floating WhatsApp */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      z-index: 998;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن والدفع عند التسليم بعد المعاينة</span>
+      <span class="announcement-item">🚚 التوصيل بالمجان وسريع في جميع المدن المغربية</span>
+      <span class="announcement-item">🔒 فحص الجهاز والتأكد منه قبل الأداء</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-main">
+      <a href="#" class="logo">MAHFOUD<span>PHONE</span></a>
+      <div class="header-badge">
+        <i class="fa fa-shield-alt"></i> ضمان الجودة والتوصيل
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="#neuf" class="active">الهواتف الجديدة (Neuf)</a></li>
+        <li><a href="#occasion">الهواتف المستعملة (Occasion)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. SECTION: NEUF -->
+    <section id="neuf">
+      <div class="section-title">
+        <i class="fa fa-box-open"></i>
+        <span>الهواتف الجديدة بالكرطونة (Neuf Boîte Fermée)</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Samsung A07 -->
+        <div class="product-card">
+          <span class="badge-discount">Promo</span>
+          <div class="product-thumb">
+            <img src="https://via.placeholder.com/260x260?text=Samsung+A07" alt="Samsung Galaxy A07">
+          </div>
+          <div class="product-details">
+            <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
+            <span class="brand-name">Samsung</span>
+            <h3 class="product-title">Samsung Galaxy A07 (4GB / 64GB)</h3>
+            <span class="condition-tag">(Neuf Boîte fermée)</span>
+            <div class="price-wrapper">
+              <span class="price-label">Prix de vente</span>
+              <span class="current-price">1,570.00 dh</span>
+              <span class="old-price">1,750.00 dh</span>
+            </div>
+            <button class="btn-order-fast" onclick="openOrderModal('Samsung Galaxy A07 (4/64)', '1,570.00 dh')">
+              <i class="fa fa-shopping-cart"></i> Commander
+            </button>
+          </div>
+        </div>
+
+        <!-- Redmi A7 Pro -->
+        <div class="product-card">
+          <span class="badge-discount">Promo</span>
+          <div class="product-thumb">
+            <img src="https://via.placeholder.com/260x260?text=Redmi+A7+Pro" alt="Redmi A7 Pro">
+          </div>
+          <div class="product-details">
+            <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
+            <span class="brand-name">Xiaomi</span>
+            <h3 class="product-title">Xiaomi Redmi A7 Pro</h3>
+            <span class="condition-tag">(Neuf Boîte fermée)</span>
+            <div class="price-wrapper">
+              <span class="price-label">Prix de vente</span>
+              <span class="current-price">1,600.00 dh</span>
+              <span class="old-price">1,800.00 dh</span>
+            </div>
+            <button class="btn-order-fast" onclick="openOrderModal('Xiaomi Redmi A7 Pro', '1,600.00 dh')">
+              <i class="fa fa-shopping-cart"></i> Commander
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. SECTION: OCCASION -->
+    <section id="occasion" style="margin-top: 40px;">
+      <div class="section-title">
+        <i class="fa fa-mobile-alt"></i>
+        <span>الهواتف المستعملة الممتازة (Occasion / Comme Neuf)</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Exemple Occasion 1 -->
+        <div class="product-card">
+          <span class="badge-discount badge-used">Bonne Occasion</span>
+          <div class="product-thumb">
+            <img src="https://via.placeholder.com/260x260?text=Occasion+Phone+1" alt="Smartphone Occasion">
+          </div>
+          <div class="product-details">
+            <span class="badge-delivery"><i class="fa fa-check-circle"></i> تم الفحص بعناية 100%</span>
+            <span class="brand-name">Samsung</span>
+            <h3 class="product-title">Samsung Galaxy (مستعمل بحالة ممتازة)</h3>
+            <span class="condition-tag condition-used">(Occasion - Comme Neuf)</span>
+            <div class="price-wrapper">
+              <span class="price-label">Prix de vente</span>
+              <span class="current-price">950.00 dh</span>
+              <span class="old-price">1,300.00 dh</span>
+            </div>
+            <button class="btn-order-fast" onclick="openOrderModal('Samsung Occasion Comme Neuf', '950.00 dh')">
+              <i class="fa fa-shopping-cart"></i> Commander
+            </button>
+          </div>
+        </div>
+
+        <!-- Exemple Occasion 2 -->
+        <div class="product-card">
+          <span class="badge-discount badge-used">Bonne Occasion</span>
+          <div class="product-thumb">
+            <img src="https://via.placeholder.com/260x260?text=Occasion+Phone+2" alt="Smartphone Occasion">
+          </div>
+          <div class="product-details">
+            <span class="badge-delivery"><i class="fa fa-check-circle"></i> بطارية ممتازة وشاشة أصلية</span>
+            <span class="brand-name">Redmi</span>
+            <h3 class="product-title">Redmi Note (مستعمل نقاوة عالية)</h3>
+            <span class="condition-tag condition-used">(Occasion - Très Bon État)</span>
+            <div class="price-wrapper">
+              <span class="price-label">Prix de vente</span>
+              <span class="current-price">1,100.00 dh</span>
+              <span class="old-price">1,500.00 dh</span>
+            </div>
+            <button class="btn-order-fast" onclick="openOrderModal('Redmi Occasion Très Bon État', '1,100.00 dh')">
+              <i class="fa fa-shopping-cart"></i> Commander
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+      <h3 style="margin-bottom: 6px; font-size: 1.1rem; text-align: center;">تأكيد الطلب السريع (COD)</h3>
+      <p id="targetProdLabel" style="font-size: 0.9rem; color: var(--primary-red); font-weight: bold; margin-bottom: 15px; text-align: center;"></p>
+      
+      <form onsubmit="handleOrderSubmit(event)">
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input type="text" id="custName" placeholder="الاسم والنسب" required>
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="tel" id="custPhone" placeholder="06XXXXXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>المدينة والعنوان</label>
+          <input type="text" id="custCity" placeholder="مثال: الدار البيضاء، الحي الحسني" required>
+        </div>
+        <button type="submit" class="btn-submit-order">تأكيد الطلب الآن 🚚</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Action -->
+  <a href="https://wa.me/212693603765" class="floating-wa" target="_blank" title="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const WA_PHONE = "212693603765";
+    let activeProduct = "";
+    let activePrice = "";
+
+    function openOrderModal(prodName, prodPrice) {
+      activeProduct = prodName;
+      activePrice = prodPrice;
+      document.getElementById('targetProdLabel').innerText = prodName + " — " + prodPrice;
+      document.getElementById('orderModal').style.display = 'flex';
+    }
+
+    function closeOrderModal() {
+      document.getElementById('orderModal').style.display = 'none';
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const city = document.getElementById('custCity').value;
+
+      const orderMsg = `السلام عليكم متجر MahfoudPhone، طلب جديد:\n📦 الجهاز: ${activeProduct}\n💰 الثمن: ${activePrice}\n👤 الاسم: ${name}\n📱 الهاتف: ${phone}\n📍 المدينة/العنوان: ${city}`;
+
+      closeOrderModal();
+      window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(orderMsg)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
