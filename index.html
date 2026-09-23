@@ -1,110 +1,271 @@
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MahfoudPhone - Smartphones Neufs & Occasion au Maroc</title>
+  <title>MAHFOUD PHONE - Le Meilleur Choix au Maroc</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary-red: #e61e2b;
-      --dark-navy: #111827;
-      --bg-light: #f4f5f7;
-      --border-color: #e5e7eb;
-      --badge-green: #10b981;
+      --dark-navy: #0f172a;
+      --bg-page: #f8fafc;
+      --border-color: #e2e8f0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
-    body { background-color: var(--bg-light); color: #1f2937; padding-bottom: 70px; }
 
-    /* Top Ribbon */
-    .announcement-bar {
-      background-color: #000;
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-page); color: #1e293b; padding-bottom: 80px; }
+
+    /* 1. TOP UTILITY BAR */
+    .top-utility {
+      background: #000;
       color: #fff;
+      text-align: center;
+      padding: 7px 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+    .top-utility a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    /* 2. HEADER */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-left, .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 1.25rem;
+    }
+    .header-logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .header-logo span.bolt {
+      color: var(--primary-red);
+      margin-right: 2px;
+    }
+    .header-logo .sub {
+      display: block;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* 3. HERO SLIDER BANNER */
+    .hero-banner {
+      width: 100%;
+      background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 20px 15px 25px;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .badge-sale {
+      background: #facc15;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .badge-discount-hero {
+      background: var(--primary-red);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      line-height: 1.1;
+    }
+    .badge-discount-hero small { font-size: 0.65rem; display: block; font-weight: normal; }
+    
+    .hero-screens {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 15px 0 10px;
+    }
+    .hero-screen-img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Trust Ribbon below hero */
+    .hero-trust {
+      background: #fff;
+      color: #334155;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+      text-transform: uppercase;
+    }
+    .hero-trust div { display: flex; align-items: center; gap: 4px; }
+
+    /* 4. MARQUEE BANNER */
+    .announcement-bar {
+      background-color: #f1f5f9;
+      color: #334155;
       overflow: hidden;
       white-space: nowrap;
       font-size: 0.82rem;
       padding: 8px 0;
-      font-weight: 500;
+      font-weight: 700;
       direction: rtl;
+      border-bottom: 1px solid var(--border-color);
     }
     .announcement-track { display: inline-block; animation: ticker 25s linear infinite; }
-    .announcement-item { display: inline-block; margin: 0 30px; }
+    .announcement-item { display: inline-block; margin: 0 25px; }
     @keyframes ticker { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-    /* Header */
-    header { background: #fff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 999; }
-    .header-main { max-width: 1240px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 1.45rem; font-weight: 900; text-decoration: none; color: var(--dark-navy); }
-    .logo span { color: var(--primary-red); }
-    .header-badge { font-size: 0.85rem; font-weight: 700; color: #059669; background: #ecfdf5; padding: 6px 12px; border-radius: 20px; border: 1px solid #a7f3d0; }
-
-    /* Hero Banner */
-    .hero-banner {
-      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    /* 5. BLACK COD CALL-TO-ACTION BANNER */
+    .cod-cta-banner {
+      background: #000;
       color: #fff;
-      padding: 30px 16px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .hero-banner h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-    .hero-banner h1 span { color: var(--primary-red); }
-    .hero-banner p { font-size: 0.9rem; color: #9ca3af; }
-
-    /* Brands Section */
-    .brands-section {
-      max-width: 1240px;
-      margin: 0 auto 25px;
-      padding: 0 16px;
-    }
-    .brands-title {
-      font-size: 0.95rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #6b7280;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 12px;
-    }
-    .brand-card {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 14px;
+      margin: 15px 12px;
+      border-radius: 12px;
+      padding: 18px 14px;
+      position: relative;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all 0.2s;
+      justify-content: space-between;
+      direction: rtl;
+      border: 1px solid #222;
     }
-    .brand-card:hover {
-      border-color: var(--primary-red);
-      transform: translateY(-2px);
+    .cod-cta-text h3 {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .cod-cta-text h3 span {
+      color: #facc15;
+    }
+    .cod-cta-text p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    .cod-cta-text small {
+      font-size: 0.72rem;
+      color: #ef4444;
+      display: block;
+      font-weight: bold;
+    }
+    .cod-cta-graphic {
+      width: 85px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .cod-cta-graphic img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* 6. NOS CATEGORIES SECTION */
+    .section-categories {
+      padding: 20px 12px 10px;
+    }
+    .categories-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 22px;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    
+    .category-banner {
+      border-radius: 12px;
+      margin-bottom: 14px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      text-decoration: none;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-    .brand-card img {
-      max-width: 80px;
-      height: 36px;
+    .category-banner.telephones {
+      background: linear-gradient(90deg, #10b981 0%, #0284c7 100%);
+    }
+    .category-banner.televiseurs {
+      background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%);
+    }
+    .category-banner.accessoires {
+      background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+    }
+
+    .cat-thumb {
+      height: 75px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-thumb img {
+      max-height: 100%;
+      max-width: 100%;
       object-fit: contain;
-      margin-bottom: 6px;
     }
-    .brand-card span {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--dark-navy);
+    .cat-name {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
     }
 
-    /* Main Container */
-    .container { max-width: 1240px; margin: 0 auto 30px; padding: 0 16px; }
-    .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 18px; color: var(--dark-navy); border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-
-    /* Product Card */
+    /* 7. PRODUCTS CATALOG */
+    .products-container {
+      padding: 15px 12px;
+    }
+    .products-heading {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
     .product-card {
       background: #fff;
       border: 1px solid var(--border-color);
@@ -113,198 +274,241 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: all 0.2s;
     }
-    .product-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-    .badge-discount { position: absolute; top: 10px; left: 10px; background: var(--primary-red); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
-    .badge-delivery { color: var(--badge-green); font-size: 0.75rem; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
-    .product-thumb { width: 100%; height: 210px; padding: 15px; display: flex; align-items: center; justify-content: center; }
-    .product-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .product-details { padding: 14px; display: flex; flex-direction: column; flex-grow: 1; border-top: 1px solid #f9fafb; }
-    .brand-name { font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase; margin-bottom: 3px; }
-    .product-title { font-size: 0.95rem; font-weight: 700; color: var(--dark-navy); margin-bottom: 6px; }
-    .condition-tag { font-size: 0.78rem; font-weight: 600; color: #059669; margin-bottom: 12px; }
-    .price-wrapper { margin-top: auto; margin-bottom: 12px; }
-    .price-label { font-size: 0.72rem; color: #6b7280; display: block; }
-    .current-price { font-size: 1.25rem; font-weight: 800; color: var(--primary-red); }
-    .old-price { font-size: 0.85rem; text-decoration: line-through; color: #9ca3af; margin-left: 6px; }
-
-    .btn-order-fast {
+    .card-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--primary-red);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .card-img-wrap {
+      width: 100%;
+      height: 140px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .card-body {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      border-top: 1px solid #f8fafc;
+    }
+    .card-shipping {
+      color: #059669;
+      font-size: 0.68rem;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+    .card-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      height: 32px;
+      overflow: hidden;
+    }
+    .card-condition {
+      font-size: 0.72rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .card-price {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--primary-red);
+    }
+    .card-old-price {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-left: 4px;
+    }
+    .btn-card-order {
       background: var(--dark-navy);
       color: #fff;
       border: none;
-      padding: 11px;
+      padding: 8px;
       border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-weight: 800;
+      font-size: 0.78rem;
       cursor: pointer;
+      margin-top: 10px;
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
     }
-    .btn-order-fast:hover { background: var(--primary-red); }
 
-    /* Modal Checkout */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      direction: rtl;
-    }
-    .modal-card { background: #fff; max-width: 420px; width: 100%; border-radius: 12px; padding: 22px; position: relative; }
-    .modal-close { position: absolute; top: 14px; left: 14px; border: none; background: none; font-size: 1.4rem; cursor: pointer; color: #6b7280; }
+    /* Checkout Popup Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; align-items: center; justify-content: center; padding: 16px; direction: rtl; }
+    .modal-card { background: #fff; max-width: 400px; width: 100%; border-radius: 12px; padding: 20px; position: relative; }
+    .modal-close { position: absolute; top: 12px; left: 14px; border: none; background: none; font-size: 1.4rem; cursor: pointer; color: #64748b; }
     .form-group { margin-bottom: 12px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
-    .form-group input { width: 100%; padding: 11px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.95rem; }
-    .btn-submit-order { width: 100%; background: #16a34a; color: #fff; border: none; padding: 13px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 8px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
+    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.95rem; }
+    .btn-submit-order { width: 100%; background: #16a34a; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; }
 
     /* Floating WhatsApp */
-    .floating-wa {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      color: white;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-      z-index: 998;
-      text-decoration: none;
-    }
+    .floating-wa { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 4px 14px rgba(0,0,0,0.25); z-index: 998; text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="announcement-track">
-      <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن والدفع عند التسليم بعد المعاينة</span>
-      <span class="announcement-item">🚚 التوصيل بالمجان وسريع في جميع المدن المغربية</span>
-      <span class="announcement-item">🔒 فحص الجهاز والتأكد منه قبل الأداء</span>
-    </div>
+  <!-- 1. Top Utility -->
+  <div class="top-utility">
+    <a href="#">Assistance</a> | <a href="#">Suivi de commande</a>
   </div>
 
-  <!-- Header -->
+  <!-- 2. Header identical to Screenshot -->
   <header>
-    <div class="header-main">
-      <a href="#" class="logo">MAHFOUD<span>PHONE</span></a>
-      <div class="header-badge">
-        <i class="fa fa-shield-alt"></i> ضمان الجودة والتوصيل
-      </div>
+    <div class="header-left">
+      <i class="fa fa-bars"></i>
+    </div>
+    <a href="#" class="header-logo">
+      <div><span class="bolt">⚡</span>MAHFOUD</div>
+      <span class="sub">PHONE</span>
+    </a>
+    <div class="header-right">
+      <i class="fa fa-search"></i>
+      <i class="fa fa-shopping-bag"></i>
     </div>
   </header>
 
-  <!-- Hero Header -->
+  <!-- 3. Hero Promo Banner -->
   <section class="hero-banner">
-    <h1>أفضل الهواتف الذكية مع <span>MahfoudPhone</span></h1>
-    <p>أجهزة أصلية، توصيل مجاني، ودفع عند الاستلام بعد المعاينة</p>
-  </section>
-
-  <!-- Brand Logos Section -->
-  <section class="brands-section">
-    <div class="brands-title">الماركات المتوفرة (Nos Marques)</div>
-    <div class="brands-grid">
-      
-      <!-- Samsung -->
-      <a href="#produits" class="brand-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
-        <span>Samsung</span>
-      </a>
-
-      <!-- Xiaomi / Redmi -->
-      <a href="#produits" class="brand-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg" alt="Xiaomi Redmi">
-        <span>Redmi</span>
-      </a>
-
-      <!-- Infinix -->
-      <a href="#produits" class="brand-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Infinix_Mobility_logo.svg" alt="Infinix">
-        <span>Infinix</span>
-      </a>
-
-      <!-- Apple -->
-      <a href="#produits" class="brand-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
-        <span>Apple</span>
-      </a>
-
+    <div class="hero-badges">
+      <div class="badge-sale">SUMMER SALE 🌴</div>
+      <div class="badge-discount-hero">
+        <small>JUSQU'À</small>-45%
+      </div>
+    </div>
+    <h2 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">OFFRES SPÉCIALES SMARTPHONES</h2>
+    <div class="hero-screens">
+      <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=80" class="hero-screen-img" alt="Promo Smartphone">
     </div>
   </section>
 
-  <!-- Products Catalog -->
-  <main class="container" id="produits">
-    <div class="section-title">
-      <span>الهواتف المتوفرة حالياً (Disponibles)</span>
+  <!-- Trust strip -->
+  <div class="hero-trust">
+    <div><i class="fa fa-check-circle" style="color:#0284c7"></i> Qualité Premium</div>
+    <div><i class="fa fa-shield-alt" style="color:#0284c7"></i> Garantie</div>
+    <div><i class="fa fa-truck" style="color:#0284c7"></i> Livraison Rapide</div>
+  </div>
+
+  <!-- 4. Announcement Marquee -->
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن بـ 100 درهم 💸 فقط ، و إكمال المبلغ عند التسليم</span>
+      <span class="announcement-item">⏰ سارع بالحجز! يمكنك تأكيد طلبك الآن بـ 100 درهم 💸 فقط ، و إكمال المبلغ عند التسليم</span>
+    </div>
+  </div>
+
+  <!-- 5. Black COD Promo Banner (Like Screenshot) -->
+  <div class="cod-cta-banner">
+    <div class="cod-cta-text">
+      <h3>احجز منتجك الآن <span>بـ 100 درهم فقط!</span></h3>
+      <p>و كمل المبلغ المتبقي عند الإستلام</p>
+      <small>⚡ منتجاتنا تنفد بسرعة • احجز الآن قبل نفاد الكمية</small>
+    </div>
+    <div class="cod-cta-graphic">
+      <i class="fa fa-mobile-alt" style="font-size: 3.5rem; color: #38bdf8;"></i>
+    </div>
+  </div>
+
+  <!-- 6. Nos Catégories Section (Like Screenshot) -->
+  <section class="section-categories">
+    <h2 class="categories-title">Nos Catégories</h2>
+
+    <!-- Cat 1: Téléphones -->
+    <a href="#produits" class="category-banner telephones">
+      <div class="cat-thumb">
+        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80" alt="Téléphones">
+      </div>
+      <div class="cat-name">Téléphones</div>
+    </a>
+
+    <!-- Cat 2: Téléviseurs / Écrans -->
+    <a href="#produits" class="category-banner televiseurs">
+      <div class="cat-thumb">
+        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=300&auto=format&fit=crop&q=80" alt="Téléviseurs">
+      </div>
+      <div class="cat-name">Téléviseurs</div>
+    </a>
+
+    <!-- Cat 3: Accessoires -->
+    <a href="#produits" class="category-banner accessoires">
+      <div class="cat-thumb">
+        <i class="fa fa-headphones" style="font-size: 2.8rem;"></i>
+      </div>
+      <div class="cat-name">Accessoires</div>
+    </a>
+  </section>
+
+  <!-- 7. Products Section with your items -->
+  <section class="products-container" id="produits">
+    <div class="products-heading">
+      <span>Nouveautés Disponibles</span>
     </div>
 
     <div class="products-grid">
 
-      <!-- Produit 1: Samsung A07 -->
+      <!-- Item 1: Samsung A07 -->
       <div class="product-card">
-        <span class="badge-discount">Promo</span>
-        <div class="product-thumb">
-          <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop&q=80" alt="Samsung Galaxy A07">
+        <span class="card-badge">Promo</span>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&auto=format&fit=crop&q=80" alt="Samsung Galaxy A07">
         </div>
-        <div class="product-details">
-          <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
-          <span class="brand-name">Samsung</span>
-          <h3 class="product-title">Samsung Galaxy A07 (4GB / 64GB)</h3>
-          <span class="condition-tag">(Neuf Boîte fermée)</span>
-          <div class="price-wrapper">
-            <span class="price-label">Prix de vente</span>
-            <span class="current-price">1,570.00 dh</span>
-            <span class="old-price">1,750.00 dh</span>
+        <div class="card-body">
+          <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
+          <h4 class="card-title">Samsung Galaxy A07 (4/64)</h4>
+          <span class="card-condition">(Neuf Boîte fermée)</span>
+          <div>
+            <span class="card-price">1,570 dh</span>
+            <span class="card-old-price">1,750 dh</span>
           </div>
-          <button class="btn-order-fast" onclick="openOrderModal('Samsung Galaxy A07 (4/64)', '1,570.00 dh')">
-            <i class="fa fa-shopping-cart"></i> Commander
-          </button>
+          <button class="btn-card-order" onclick="openOrderModal('Samsung Galaxy A07 (4/64)', '1,570.00 dh')">Commander</button>
         </div>
       </div>
 
-      <!-- Produit 2: Redmi A7 Pro -->
+      <!-- Item 2: Redmi A7 Pro -->
       <div class="product-card">
-        <span class="badge-discount">Promo</span>
-        <div class="product-thumb">
-          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80" alt="Redmi A7 Pro">
+        <span class="card-badge">Promo</span>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80" alt="Redmi A7 Pro">
         </div>
-        <div class="product-details">
-          <span class="badge-delivery"><i class="fa fa-bolt"></i> Livraison rapide</span>
-          <span class="brand-name">Xiaomi</span>
-          <h3 class="product-title">Xiaomi Redmi A7 Pro</h3>
-          <span class="condition-tag">(Neuf Boîte fermée)</span>
-          <div class="price-wrapper">
-            <span class="price-label">Prix de vente</span>
-            <span class="current-price">1,600.00 dh</span>
-            <span class="old-price">1,800.00 dh</span>
+        <div class="card-body">
+          <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
+          <h4 class="card-title">Xiaomi Redmi A7 Pro</h4>
+          <span class="card-condition">(Neuf Boîte fermée)</span>
+          <div>
+            <span class="card-price">1,600 dh</span>
+            <span class="card-old-price">1,800 dh</span>
           </div>
-          <button class="btn-order-fast" onclick="openOrderModal('Xiaomi Redmi A7 Pro', '1,600.00 dh')">
-            <i class="fa fa-shopping-cart"></i> Commander
-          </button>
+          <button class="btn-card-order" onclick="openOrderModal('Xiaomi Redmi A7 Pro', '1,600.00 dh')">Commander</button>
         </div>
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- Checkout Modal -->
+  <!-- Checkout Popup Modal -->
   <div class="modal-overlay" id="orderModal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeOrderModal()">&times;</button>
-      <h3 style="margin-bottom: 6px; font-size: 1.1rem; text-align: center;">تأكيد الطلب السريع (COD)</h3>
-      <p id="targetProdLabel" style="font-size: 0.9rem; color: var(--primary-red); font-weight: bold; margin-bottom: 15px; text-align: center;"></p>
+      <h3 style="margin-bottom: 6px; font-size: 1.05rem; text-align: center;">تأكيد الطلب السريع (COD)</h3>
+      <p id="targetProdLabel" style="font-size: 0.88rem; color: var(--primary-red); font-weight: bold; margin-bottom: 14px; text-align: center;"></p>
       
       <form onsubmit="handleOrderSubmit(event)">
         <div class="form-group">
@@ -317,15 +521,15 @@
         </div>
         <div class="form-group">
           <label>المدينة والعنوان</label>
-          <input type="text" id="custCity" placeholder="مثال: الدار البيضاء، الحي الحسني" required>
+          <input type="text" id="custCity" placeholder="مثال: الدار البيضاء" required>
         </div>
         <button type="submit" class="btn-submit-order">تأكيد الطلب الآن 🚚</button>
       </form>
     </div>
   </div>
 
-  <!-- WhatsApp Floating Action -->
-  <a href="https://wa.me/212693603765" class="floating-wa" target="_blank" title="تواصل عبر واتساب">
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/212693603765" class="floating-wa" target="_blank" title="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
