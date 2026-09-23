@@ -120,7 +120,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    /* Trust Ribbon below hero */
+    /* Trust Ribbon */
     .hero-trust {
       background: #fff;
       color: #334155;
@@ -150,13 +150,13 @@
     .announcement-item { display: inline-block; margin: 0 25px; }
     @keyframes ticker { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-    /* 5. BLACK COD CALL-TO-ACTION BANNER */
-    .cod-cta-banner {
+    /* 5. BANNER WITH YOUR CUSTOM PHONES IMAGE */
+    .cod-custom-banner {
       background: #000;
       color: #fff;
       margin: 15px 12px;
-      border-radius: 12px;
-      padding: 18px 14px;
+      border-radius: 14px;
+      padding: 15px 14px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -164,37 +164,50 @@
       justify-content: space-between;
       direction: rtl;
       border: 1px solid #222;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-    .cod-cta-text h3 {
+    .cod-custom-text {
+      flex: 1;
+      z-index: 2;
+    }
+    .cod-custom-text h3 {
       font-size: 1.15rem;
       font-weight: 900;
       margin-bottom: 4px;
+      line-height: 1.3;
     }
-    .cod-cta-text h3 span {
+    .cod-custom-text h3 span {
       color: #facc15;
     }
-    .cod-cta-text p {
+    .cod-custom-text p {
       font-size: 0.85rem;
       color: #cbd5e1;
       margin-bottom: 8px;
     }
-    .cod-cta-text small {
+    .cod-custom-text small {
       font-size: 0.72rem;
       color: #ef4444;
       display: block;
       font-weight: bold;
     }
-    .cod-cta-graphic {
-      width: 85px;
+    .cod-custom-img-wrap {
+      width: 125px;
       flex-shrink: 0;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    .cod-cta-graphic img {
+    .cod-custom-img-wrap img {
       width: 100%;
-      height: auto;
+      height: 130px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 8px;
+      transform: scale(1.08);
     }
 
-    /* 6. NOS CATEGORIES SECTION */
+    /* 6. NOS CATEGORIES */
     .section-categories {
       padding: 20px 12px 10px;
     }
@@ -226,9 +239,6 @@
     }
     .category-banner.televiseurs {
       background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%);
-    }
-    .category-banner.accessoires {
-      background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
     }
 
     .cat-thumb {
@@ -289,11 +299,12 @@
     }
     .card-img-wrap {
       width: 100%;
-      height: 140px;
+      height: 150px;
       padding: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #fff;
     }
     .card-img-wrap img {
       max-width: 100%;
@@ -342,10 +353,10 @@
       background: var(--dark-navy);
       color: #fff;
       border: none;
-      padding: 8px;
+      padding: 9px;
       border-radius: 6px;
       font-weight: 800;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       cursor: pointer;
       margin-top: 10px;
       width: 100%;
@@ -371,7 +382,7 @@
     <a href="#">Assistance</a> | <a href="#">Suivi de commande</a>
   </div>
 
-  <!-- 2. Header identical to Screenshot -->
+  <!-- 2. Header -->
   <header>
     <div class="header-left">
       <i class="fa fa-bars"></i>
@@ -396,7 +407,7 @@
     </div>
     <h2 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">OFFRES SPÉCIALES SMARTPHONES</h2>
     <div class="hero-screens">
-      <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=80" class="hero-screen-img" alt="Promo Smartphone">
+      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=80'" class="hero-screen-img" alt="Promo Smartphone">
     </div>
   </section>
 
@@ -415,48 +426,39 @@
     </div>
   </div>
 
-  <!-- 5. Black COD Promo Banner (Like Screenshot) -->
-  <div class="cod-cta-banner">
-    <div class="cod-cta-text">
+  <!-- 5. BANNER WITH YOUR PROVIDED PHONES IMAGE -->
+  <div class="cod-custom-banner">
+    <div class="cod-custom-text">
       <h3>احجز منتجك الآن <span>بـ 100 درهم فقط!</span></h3>
       <p>و كمل المبلغ المتبقي عند الإستلام</p>
       <small>⚡ منتجاتنا تنفد بسرعة • احجز الآن قبل نفاد الكمية</small>
     </div>
-    <div class="cod-cta-graphic">
-      <i class="fa fa-mobile-alt" style="font-size: 3.5rem; color: #38bdf8;"></i>
+    <div class="cod-custom-img-wrap">
+      <!-- صورة هواتف ريدمي التي أرفقتها -->
+      <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80'" alt="Smartphones Disponibles">
     </div>
   </div>
 
-  <!-- 6. Nos Catégories Section (Like Screenshot) -->
+  <!-- 6. Nos Catégories Section -->
   <section class="section-categories">
     <h2 class="categories-title">Nos Catégories</h2>
 
-    <!-- Cat 1: Téléphones -->
     <a href="#produits" class="category-banner telephones">
       <div class="cat-thumb">
-        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80" alt="Téléphones">
+        <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80'" alt="Téléphones">
       </div>
       <div class="cat-name">Téléphones</div>
     </a>
 
-    <!-- Cat 2: Téléviseurs / Écrans -->
     <a href="#produits" class="category-banner televiseurs">
       <div class="cat-thumb">
         <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=300&auto=format&fit=crop&q=80" alt="Téléviseurs">
       </div>
       <div class="cat-name">Téléviseurs</div>
     </a>
-
-    <!-- Cat 3: Accessoires -->
-    <a href="#produits" class="category-banner accessoires">
-      <div class="cat-thumb">
-        <i class="fa fa-headphones" style="font-size: 2.8rem;"></i>
-      </div>
-      <div class="cat-name">Accessoires</div>
-    </a>
   </section>
 
-  <!-- 7. Products Section with your items -->
+  <!-- 7. Products Section with provided Images -->
   <section class="products-container" id="produits">
     <div class="products-heading">
       <span>Nouveautés Disponibles</span>
@@ -464,11 +466,12 @@
 
     <div class="products-grid">
 
-      <!-- Item 1: Samsung A07 -->
+      <!-- Item 1: Samsung A07 / A17 -->
       <div class="product-card">
         <span class="card-badge">Promo</span>
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&auto=format&fit=crop&q=80" alt="Samsung Galaxy A07">
+          <!-- صورة سامسونج المرفقة -->
+          <img src="samsung-a17.png" onerror="this.src='https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&auto=format&fit=crop&q=80'" alt="Samsung Galaxy">
         </div>
         <div class="card-body">
           <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
@@ -486,7 +489,8 @@
       <div class="product-card">
         <span class="card-badge">Promo</span>
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80" alt="Redmi A7 Pro">
+          <!-- صورة ريدمي المرفقة -->
+          <img src="redmi-banner.png" onerror="this.src='https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&auto=format&fit=crop&q=80'" alt="Redmi A7 Pro">
         </div>
         <div class="card-body">
           <span class="card-shipping"><i class="fa fa-bolt"></i> Livraison rapide</span>
